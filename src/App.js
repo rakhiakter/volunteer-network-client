@@ -9,6 +9,10 @@ import EventTasks from './Components/EventTasks/EventTasks';
 import Admin from './Components/Admin/Admin';
 import AdminCreateTask from './Components/AdminCreateTtask/AdminCreateTask';
 import CreateAccount from './Components/CreateAccount/CreateAccount';
+import * as firebase from "firebase/app";
+import "firebase/auth";
+import firebaseConfig from './firebase.config';
+ firebase.initializeApp(firebaseConfig)
 
 function App() {
   return (

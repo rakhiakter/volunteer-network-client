@@ -16,7 +16,6 @@
     left: 491px;
     padding-top: 154px;
     padding-left: 67px;
-    
 }
 
 #log {
@@ -31,4 +30,36 @@
     line-height: 29px;
     color: #000000;
     text-align: center;
+}
+
+#icon {
+    width: 31px;
+    height: 31.74px;
+    left: 499px;
+    top: 373px;
+    margin-right: 180px;
+}
+
+#border {
+    width: 457px;
+    height: 51px;
+    left: 492px;
+    top: 363px;
+    background: #FFFFFF;
+    border: 1px solid #C7C7C7;
+    box-sizing: border-box;
+    border-radius: 57px;
+}
+
+#Continue {
+    height: 20px;
+    left: 44.51%;
+    right: 43.12%;
+    top: 378px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
 }

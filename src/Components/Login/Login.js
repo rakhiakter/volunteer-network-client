@@ -1,5 +1,5 @@
 import React from 'react';
-import {  Container, Form, Image, Row } from 'react-bootstrap';
+import {  Button, Container, Form, Image, Row } from 'react-bootstrap';
 import './Login.css';
 
 const Login = () => {
@@ -15,7 +15,14 @@ const Login = () => {
               <h1 id="log">Login With</h1>
               <br />
               <Form.Group controlId="formBasicEmail">
-                <Form.Control type="email" placeholder="Continue with Google" />
+                <Button id="border" variant="light" type="button" size="lg">
+                  <img
+                    id="icon"
+                    src={require("../../icon/google.png")}
+                    alt=""
+                  />
+                  <span id="continue"> Continue with Google</span>
+                </Button>
                 <Form.Text className="text-muted">
                   Don't have an Account? <a href="#">Create an account</a>
                 </Form.Text>
