@@ -45,7 +45,7 @@ const tasks = [
     color: "#FFBD3E",
   },
   {
-    name: "Good education",
+    name: "Good Education",
     pic: "goodEducation.png",
     color: "#9F90FC",
   },
@@ -55,7 +55,7 @@ const tasks = [
     color: "#FF7044",
   },
   {
-    name: "it help",
+    name: "It Help",
     pic: "ITHelp.png",
     color: "#421FCF",
   },
