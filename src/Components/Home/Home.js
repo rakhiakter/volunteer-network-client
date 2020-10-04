@@ -12,7 +12,7 @@ const tasks = [
   {
     name: "Baby Sit",
     pic: "babySit.png",
-    color: "#4FFBD3E",
+    color: "#FFBD3E",
   },
   {
     name: "Bird House",
@@ -42,7 +42,7 @@ const tasks = [
   {
     name: "Drive Safety",
     pic: "driveSafety.png",
-    color: "#4FFBD3E",
+    color: "#FFBD3E",
   },
   {
     name: "Good education",
@@ -62,12 +62,12 @@ const tasks = [
   {
     name: "Books",
     pic: "libraryBooks.png",
-    color: "#4FFBD3E",
+    color: "#FFBD3E",
   },
   {
     name: "Drive Safety",
     pic: "musicLessons.png",
-    color: "#FF7044",
+    color: "#FFBD3E",
   },
   {
     name: "Drive Safety",

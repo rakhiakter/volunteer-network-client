@@ -2,6 +2,7 @@ import React from 'react';
 
 import './VolunteerCard.css';
 const VolunteerCard= ({task}) => {
+  console.log(task);
     return (
       <div className="col-md-3">
           <img
@@ -17,7 +18,13 @@ const VolunteerCard= ({task}) => {
             src={require(`../../images/${task.pic}`)}
             alt=""
           />
-          <h3 style={{backgroundColor: "#" + task.color}}>{task.name}</h3>
+          <h3 style={{backgroundColor:  task.color,
+        width:"270px",
+        height: "80px",
+            borderRadius: "10px"
+        
+        
+        }}>{task.name}</h3>
 
       </div>
     );
