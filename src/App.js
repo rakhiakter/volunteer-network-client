@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{createContext, useState}from 'react';
 import './App.css';
 import Home from './Components/Home/Home';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -9,14 +9,16 @@ import EventTasks from './Components/EventTasks/EventTasks';
 import Admin from './Components/Admin/Admin';
 import AdminCreateTask from './Components/AdminCreateTtask/AdminCreateTask';
 import CreateAccount from './Components/CreateAccount/CreateAccount';
-import * as firebase from "firebase/app";
-import "firebase/auth";
-import firebaseConfig from './firebase.config';
- firebase.initializeApp(firebaseConfig)
 
+export const UserContext = createContext();
+
+
+ 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <div>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+    
       <Router>
         <Switch>
           <Route exact path="/" component={Home}/>
@@ -26,7 +28,7 @@ function App() {
           <Route path="/createAccount/:event" component={CreateAccount}/>
            
           
-          <Route path="/eventTask" component={EventTasks}/>
+          <Route path="/eventTasks" component={EventTasks}/>
             
          
           <Route path="/admin" component={Admin}/>
@@ -35,7 +37,8 @@ function App() {
 
         </Switch>
       </Router>
-    </div>
+      </UserContext.Provider>
+    
   );
 }
 
