@@ -9,6 +9,7 @@ import EventTasks from './Components/EventTasks/EventTasks';
 import Admin from './Components/Admin/Admin';
 import AdminCreateTask from './Components/AdminCreateTtask/AdminCreateTask';
 import CreateAccount from './Components/CreateAccount/CreateAccount';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
 
@@ -25,7 +26,7 @@ function App() {
           <Route path="/login" component={Login}/>
             
         
-          <Route path="/createAccount/:event" component={CreateAccount}/>
+          <PrivateRoute path="/createAccount/:event" component={CreateAccount}/>
            
           
           <Route path="/eventTasks" component={EventTasks}/>

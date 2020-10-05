@@ -6,7 +6,13 @@ const VolunteerCard= ({task}) => {
   console.log(task);
     return (
       <div className="col-md-3">
-        <Link to={"/createAccount/"+task.name}>
+          <Link
+            to={{
+            pathname:"/createAccount/" + task.eventName,
+              state: {...task }
+            }}
+          >
+          
           <img
             style={{
               height: "320px",
@@ -19,19 +25,23 @@ const VolunteerCard= ({task}) => {
             src={require(`../../images/${task.pic}`)}
             alt=""
           />
-          <h3
+          <h4
             style={{
               backgroundColor: task.color,
               width: "270px",
-              height: "80px",
+              height: "90px",
               borderRadius: "10px",
               textAlign: "center",
-              padding: "20px",
+              padding: "5px",
               color: "white",
+              fontFamily:" Montserrat",
+              fontStyle: "normal",
+              fontWeight: "600"
+             
             }}
           >
-            {task.name}
-          </h3>
+            {task.eventName}
+          </h4>
         </Link>
       </div>
     );

@@ -1,7 +1,11 @@
 import React from 'react';
 import { Container, Row, Form , Button, Image} from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 import './CreateAccount.css';
-const CreateAccount = () => {
+const CreateAccount = (props) => {
+  const {event} = useParams();
+const {task} = props.location.state;
+console.log(task);
     return (
       <div>
         <Container>
@@ -13,7 +17,7 @@ const CreateAccount = () => {
             <Form id="register">
               <h3>Register as a Volunteer</h3>
               <Form.Group controlId="formBasicEmail">
-                <Form.Control type="text" placeholder="FullName" />
+                <Form.Control type="text" placeholder="FullName" defaultValue={event} />
               </Form.Group>
               <Form.Group controlId="formBasicPassword">
                 <Form.Control type="text" placeholder="UserName Or Email" />
