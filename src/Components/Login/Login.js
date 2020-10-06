@@ -17,7 +17,7 @@ const Login = () => {
   const [newUser, setNewUser] = useState(false);
   const [user, setUser] = useState({
     isSignIn: false,
-    name: "",
+    fullName: "",
     email: "",
     password: "",
     photo: "",
@@ -37,7 +37,7 @@ const Login = () => {
         const { displayName, photoURL, email } = res.user;
         const signInUser = {
           isSignIn: true,
-          name: displayName,
+          fullName: displayName,
           email: email,
           photo: photoURL,
         };

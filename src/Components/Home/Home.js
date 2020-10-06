@@ -112,7 +112,7 @@ const Home = () => {
 
         <div className="row">
           {tasks.map((task) => (
-            <VolunteerCard task={task}></VolunteerCard>
+            <VolunteerCard key = {task.eventName} task={task}></VolunteerCard>
           ))}
         </div>
       </div>

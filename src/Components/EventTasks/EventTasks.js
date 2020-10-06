@@ -1,45 +1,30 @@
-import React from 'react';
-import { Container, Image } from 'react-bootstrap';
-import './EventTasks.css'
-const EventTasks = () => {
-   const cancelEventTasks = () => {
+import React, { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../../App';
+import Event from '../Event/Event';
+import Header from '../Header/Header';
 
-    }
-    const activity = {pic: "extraVolunteer.png"}
+
+const EventTasks = () => {
+     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+const email = loggedInUser.email;
+     const [eventData, setEventData] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/getEvent/'+ email)
+        .then(res => res.json())
+        .then(data =>{
+          console.log(data);
+          setEventData(data)});
+    }, [email])
     return (
-      <Container>
-        <div className="col-md-6" id="task">
-          <div className="row">
-            <div className="col-md-4">
-              <Image src={require("../../images/extraVolunteer.png")} fluid />
-            </div>
-            <div className="col-md-4">
-              <h2>
-                <b>Humanity More</b>
-              </h2>
-              <p>
-                <b>Date</b>
-              </p>
-              <button onClick={cancelEventTasks}>Cancel</button>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-md-4">
-              <Image src={require("../../images/extraVolunteer.png")} fluid />
-            </div>
-            <div className="col-md-4">
-              <h2>
-                <b>Humanity More</b>
-              </h2>
-              <p>
-                <b>Date</b>
-              </p>
-              <button onClick={cancelEventTasks}>Cancel</button>
-            </div>
-          </div>
-          
+      <div>
+        <Header></Header>
+        <div className="row">
+          {eventData.map((task) => (
+            <Event key={task.eventName} task={task}></Event>
+          ))}
         </div>
-      </Container>
+      </div>
     );
 };
 
