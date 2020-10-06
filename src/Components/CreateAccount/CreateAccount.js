@@ -49,7 +49,7 @@ const handleBlur = (e) => {
     console.log(loggedInUser);
     console.log(event);
 console.log("submit");
-   fetch('http://volunteer-network-1.herokuapp.com/addEvent', {
+   fetch('https://volunteer-network-1.herokuapp.com/addEvent', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(event) 
