@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Header from '../Header/Header';
+import Search from '../Search/Search';
 import VolunteerCard from '../VolunteerCard/VolunteerCard';
 
 const tasks = [
@@ -112,8 +113,9 @@ const Home = () => {
 
         <div className="row">
           {tasks.map((task) => (
-            <VolunteerCard key = {task.eventName} task={task}></VolunteerCard>
+            <VolunteerCard key={task.eventName} task={task}></VolunteerCard>
           ))}
+          <Search></Search>
         </div>
       </div>
     );

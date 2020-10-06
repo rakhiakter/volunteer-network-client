@@ -10,7 +10,7 @@ const email = loggedInUser.email;
      const [eventData, setEventData] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/getEvent/'+ email)
+        fetch('https://volunteer-network-1.herokuapp.com/getEvent/'+ email)
         .then(res => res.json())
         .then(data =>{
           console.log(data);

@@ -7,7 +7,8 @@ import {
  
  
 } from "react-bootstrap";
-import Search from '../Home/Search/Search';
+
+import { Link } from 'react-router-dom';
 
 
 
@@ -24,20 +25,21 @@ const Header = () => {
               />
             </Navbar.Brand>
             <Nav className="ml-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#features">Donation</Nav.Link>
-              <Nav.Link href="#pricing">Events</Nav.Link>
-              <Nav.Link href="#pricing">Blog</Nav.Link>
-              <Nav.Link id="button1" className="btn" href="#pricing">
+              <Link to="/" className="nav-link">
+                Home
+              </Link>
+              <Link className="nav-link">Donation</Link>
+              <Link className="nav-link">Events</Link>
+              <Link className="nav-link">Blog</Link>
+              <Link id="button1" className="btn" to="/login">
                 Register
-              </Nav.Link>
-              <Nav.Link id="button2" className="btn" href="#pricing">
+              </Link>
+              <Link id="button2" className="btn" to="/admin">
                 Admin
-              </Nav.Link>
+              </Link>
             </Nav>
           </Navbar>
         </Container>
-        <Search></Search>
       </div>
     );
 };

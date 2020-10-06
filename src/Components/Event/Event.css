@@ -9,6 +9,7 @@
     top: 332px;
     background: #E3E3E3;
     border-radius: 5px;
+   margin-left: 170px;
 }
 
 #task {
@@ -30,7 +31,7 @@
     border-radius: 15px;
 }
 
-#task>.row h2 {
+#task>.row h3 {
     width: 177px;
     height: 33px;
     left: 376px;
@@ -57,5 +58,6 @@
     line-height: 26px;
     /* identical to box height, or 130% */
     text-align: center;
-    color: #000000;
+    color: #5a2525;
+    padding-top: 5px;
 }

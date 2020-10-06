@@ -13,7 +13,9 @@ fullName: loggedInUser.fullName,
 email: loggedInUser.email,
 date: loggedInUser.date,
 description: '',
-eventName: eventName
+eventName: eventName,
+pic: pic,
+color: color
   });
 const history = useHistory();
 const handleBlur = (e) => {
@@ -47,7 +49,7 @@ const handleBlur = (e) => {
     console.log(loggedInUser);
     console.log(event);
 console.log("submit");
-   fetch('http://localhost:5000/addEvent', {
+   fetch('http://volunteer-network-1.herokuapp.com/addEvent', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(event) 
