@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Container, Nav, Navbar, Row, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Admin.css';
 const Admin = () => {
+
+       const [eventData, setEventData] = useState([]);
+ useEffect(() => {
+   fetch("https://volunteer-network-1.herokuapp.com/getEvent")
+     .then((res) => res.json())
+     .then((data) => {
+       console.log(data);
+       setEventData(data);
+     });
+ }, []);
     return (
       <div>
         <Container>
@@ -41,23 +51,15 @@ const Admin = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td colSpan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
+                  {eventData.map((event) => (
+                    <tr>
+                      <td>{event.fullName}</td>
+                  <td colSpan="2">{event.email}</td>
+                  <td>{event.date}</td>
+                  <td>{event.name}</td>
+                      <td><button>delete</button></td>
+                    </tr>
+                  ))}
                 </tbody>
               </Table>
             </Col>

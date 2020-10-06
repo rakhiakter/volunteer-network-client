@@ -30,7 +30,7 @@ const Event = (props) => {
               <b>{eventName}</b>
             </h3>
             <p>
-              <b>{date}</b>
+              <b id="date">{date}</b>
             </p>
             <button onClick={(e)=>cancelEventTasks(e,_id)}>Cancel</button>
           </div>
